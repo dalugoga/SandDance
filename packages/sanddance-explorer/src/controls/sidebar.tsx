@@ -33,7 +33,7 @@ export function Sidebar(props: Props) {
             sideTabId: SideTabId.Color,
             iconName: 'Color',
             title: strings.labelColor
-        },
+        },/*
         {
             sideTabId: SideTabId.Data,
             iconName: 'Table',
@@ -58,7 +58,7 @@ export function Sidebar(props: Props) {
             sideTabId: SideTabId.Settings,
             iconName: 'Settings',
             title: strings.labelChartSettings
-        }
+        }*/
     ];
     return (
         <div className={util.classList('sanddance-sidebar', 'calculator', props.pinned && 'pinned', props.closed && 'closed')}>
@@ -77,7 +77,7 @@ export function Sidebar(props: Props) {
                             />
                         ))}
                     </div>
-                    {!props.hideSidebarControls && (
+                    {/*!props.hideSidebarControls && (
                         <div className="sidebar-controls">
                             <Sidebutton
                                 {...props}
@@ -92,7 +92,7 @@ export function Sidebar(props: Props) {
                                 title={props.closed ? strings.buttonToolbarShow : strings.buttonToolbarHide}
                             />
                         </div>
-                    )}
+                    )*/}
                 </div>
                 <Scrollable role='tabpanel'>
                     <div className="sidetab">

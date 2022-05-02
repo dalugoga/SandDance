@@ -13,6 +13,7 @@ function hasClientXY(e: MouseEvent | PointerEvent | Touch) {
 }
 
 export function getPosition(e: MouseEvent | PointerEvent | TouchEvent): MousePosition {
+    console.log("function MousePosition.getPosition")
     let xy = hasClientXY(e as MouseEvent | PointerEvent);
     if (xy) {
         return xy;

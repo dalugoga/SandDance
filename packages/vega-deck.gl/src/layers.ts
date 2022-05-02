@@ -22,6 +22,8 @@ import { InterpolationTransitionTiming } from '@deck.gl/core/lib/layer';
 import { Layer } from 'deck.gl';
 import { TextLayerProps } from '@deck.gl/layers/text-layer/text-layer';
 
+var last_index: number = -1;
+
 export function getLayers(
     presenter: Presenter,
     config: PresenterConfig,
@@ -79,6 +81,21 @@ function newCubeLayer(presenter: Presenter, config: PresenterConfig, cubeData: C
             config.onCubeClick(e && e.srcEvent, o.object as Cube);
         },
         onHover: (o, e) => {
+
+            if (o.index != last_index)
+                if (last_index != -1) {
+                    console.log("dalu," + Date.now() + ",DetailsOnDemand,Stopped:" + last_index)
+                    if (o.index != -1)
+                        console.log("dalu," + Date.now() + ",DetailsOnDemand,Started:" + o.index)
+                    last_index = o.index;
+                }
+                else {
+                    console.log("dalu," + Date.now() + ",DetailsOnDemand,Started: " + o.index)
+                    last_index = o.index;
+                }
+                
+
+
             if (o.index === -1) {
                 presenter.deckgl.interactiveState.onCube = false;
                 config.onCubeHover(e && e.srcEvent, null);

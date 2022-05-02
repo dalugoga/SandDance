@@ -40,6 +40,7 @@ export function Topbar(props: Props) {
     const zeroResults = props.selectionState.selectedData && props.selectionState.selectedData.length === 0;
     const disabled = !props.loaded;
     const items: FluentUITypes.ICommandBarItemProps[] = [
+        /*
         {
             key: 'undo',
             name: strings.buttonUndo,
@@ -57,7 +58,7 @@ export function Topbar(props: Props) {
             },
             disabled: disabled || props.historyItems.length <= 1 || props.historyIndex >= props.historyItems.length - 1,
             onClick: props.redo
-        },
+        },*/
         {
             key: 'deselect',
             name: strings.buttonDeselect,
@@ -75,7 +76,7 @@ export function Topbar(props: Props) {
             },
             disabled: disabled || !props.selectionSearch || zeroResults,
             onClick: () => props.doFilter(props.selectionSearch, strings.labelHistoryFilterIsolate)
-        },
+        },/*
         {
             key: 'exclude',
             name: strings.buttonExclude,
@@ -84,7 +85,7 @@ export function Topbar(props: Props) {
             },
             disabled: disabled || !props.selectionSearch || zeroResults,
             onClick: () => props.doFilter(SandDance.searchExpression.invert(props.selectionSearch), strings.labelHistoryFilterIExclude)
-        },
+        },*/
         {
             key: 'reset',
             name: strings.buttonReset,
@@ -102,6 +103,7 @@ export function Topbar(props: Props) {
         items.forEach(item => item.iconOnly = true);
     }
     const farItems: FluentUITypes.ICommandBarItemProps[] = [
+        /*
         {
             key: 'previous-snapshot',
             iconProps: {
@@ -128,9 +130,10 @@ export function Topbar(props: Props) {
             title: strings.buttonNextSnapshot,
             onClick: props.onSnapshotNextClick,
             disabled: props.snapshots.length < 2
-        },
+        },*/
         {
             key: 'view',
+            name: "Change View",
             iconProps: {
                 iconName: props.view === '2d' ? 'CubeShape' : 'Page'
             },
@@ -140,6 +143,7 @@ export function Topbar(props: Props) {
         },
         {
             key: 'home',
+            name: "Center View",
             iconProps: {
                 iconName: 'PicturePosition'
             },

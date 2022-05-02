@@ -239,6 +239,7 @@ function _Explorer(props: Props) {
                 },
                 onColorContextChange: () => this.manageColorToolbar(),
                 onDataFilter: (filter, filteredData) => {
+                    //console.log("dalu: onDataFilter")
                     const selectedItemIndex = { ...this.state.selectedItemIndex };
                     selectedItemIndex[DataScopeId.FilteredData] = 0;
                     this.changeInsight(
@@ -254,6 +255,7 @@ function _Explorer(props: Props) {
                     viewerOptions && viewerOptions.onDataFilter && viewerOptions.onDataFilter(filter, filteredData);
                 },
                 onSelectionChanged: (newSearch, index, selectedData) => {
+                    //console.log("dalu: onSelectionChanged")
                     if (this.ignoreSelectionChange) return;
                     const selectedItemIndex = { ...this.state.selectedItemIndex };
                     selectedItemIndex[DataScopeId.SelectedData] = index || 0;
@@ -268,10 +270,12 @@ function _Explorer(props: Props) {
                     viewerOptions && viewerOptions.onSelectionChanged && viewerOptions.onSelectionChanged(newSearch, index, selectedData);
                 },
                 onAxisClick: (e, search) => {
+                    //console.log("dalu: onAxisClick")
                     this.toggleableSearch(e, search);
                     viewerOptions && viewerOptions.onAxisClick && viewerOptions.onAxisClick(e, search);
                 },
                 onLegendHeaderClick: e => {
+                    //console.log("dalu: onLegendHeaderClick")
                     const pos = getPosition(e);
                     const specRole = this.state.specCapabilities && this.state.specCapabilities.roles.filter(r => r.role === 'color')[0];
                     const positionedColumnMapProps: PositionedColumnMapProps = {
@@ -287,6 +291,7 @@ function _Explorer(props: Props) {
                     this.setState({ positionedColumnMapProps });
                 },
                 onLegendRowClick: (e, legendRow) => {
+                    //console.log("dalu: onLegendRowClick")
                     this.toggleableSearch(e, legendRow.search);
                     viewerOptions && viewerOptions.onLegendRowClick && viewerOptions.onLegendRowClick(e, legendRow);
                 },
@@ -315,6 +320,7 @@ function _Explorer(props: Props) {
                     }
                 },
                 onTextClick: (e, text) => {
+                    //console.log("dalu: onTextClick")
                     if (e && text) {
                         const pos = getPosition(e);
                         const { specRole } = text as TextWithSpecRole;
@@ -924,20 +930,24 @@ function _Explorer(props: Props) {
         }
 
         private doFilter(search: SandDance.searchExpression.Search, historicFilterChange: string) {
+            console.log("dalu," + Date.now() + ",Filtering,Filter")
             this.historicFilterChange = historicFilterChange;
             this.viewer.filter(search);
         }
 
         private doUnfilter(historicFilterChange: string) {
+            console.log("dalu," + Date.now() + ",Filtering,UnFilter")
             this.historicFilterChange = historicFilterChange;
             this.viewer.reset();
         }
 
         private doSelect(search: SandDance.searchExpression.Search) {
+            console.log("dalu," + Date.now() + ",Filtering,Selecting")
             this.viewer.select(search);
         }
 
         private doDeselect() {
+            //console.log("dalu: doDeselect")
             return this.viewer.deselect();
         }
 
@@ -1072,6 +1082,7 @@ function _Explorer(props: Props) {
                         }}
                         onViewClick={() => {
                             const view = this.state.view === '2d' ? '3d' : '2d';
+                            console.log("dalu," + Date.now() + ",VizChange," + view)
                             this.changeInsight(
                                 { view },
                                 { label: view === '2d' ? strings.labelViewType2d : strings.labelViewType3d }
@@ -1126,6 +1137,7 @@ function _Explorer(props: Props) {
                             }}
                             onSideTabClick={sideTabId => {
                                 //collapse or toggle
+                                console.log("dalu," + Date.now() + ",SideTabChange," + SideTabId[sideTabId]);
                                 if (sideTabId === SideTabId.Collapse || this.state.sideTabId === sideTabId) {
                                     let { dataScopeId, sidebarClosed } = this.state;
                                     if (sidebarClosed && sideTabId === SideTabId.Data) {
@@ -1498,6 +1510,11 @@ function _Explorer(props: Props) {
             const categoricalColumns = allColumns && allColumns.filter(c => !c.quantitative);
             const props: ColumnMapBaseProps = {
                 changeColumnMapping: (role, columnOrRole, defaultColumn, options) => {
+                    if(columnOrRole != null)
+                        console.log("dalu," + Date.now() + ",VizMappingChange," + role + ":" + this.state.columns[role] + ">" + columnOrRole['name']);
+                    else
+                        console.log("dalu," + Date.now() + ",VizMappingChange," + role + ":" + this.state.columns[role] + ">undefined");
+
                     let column: SandDance.types.Column;
                     if (typeof columnOrRole === 'string') {
                         //look up current insight

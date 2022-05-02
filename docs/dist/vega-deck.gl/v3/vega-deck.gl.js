@@ -1363,6 +1363,7 @@ void main(void) {
     }
 
     // Copyright (c) Microsoft Corporation. All rights reserved.
+    var last_index = -1;
     function getLayers(presenter, config, stage, lightSettings /*LightSettings*/, lightingMix, interpolator, guideLines) {
         const cubeLayer = newCubeLayer(presenter, config, stage.cubeData, presenter.style.highlightColor, lightSettings, lightingMix, interpolator);
         const { x, y, z } = stage.axes;
@@ -1417,6 +1418,17 @@ void main(void) {
                 config.onCubeClick(e && e.srcEvent, o.object);
             },
             onHover: (o, e) => {
+                if (o.index != last_index)
+                    if (last_index != -1) {
+                        console.log("dalu," + Date.now() + ",DetailsOnDemand,Stopped:" + last_index);
+                        if (o.index != -1)
+                            console.log("dalu," + Date.now() + ",DetailsOnDemand,Started:" + o.index);
+                        last_index = o.index;
+                    }
+                    else {
+                        console.log("dalu," + Date.now() + ",DetailsOnDemand,Started: " + o.index);
+                        last_index = o.index;
+                    }
                 if (o.index === -1) {
                     presenter.deckgl.interactiveState.onCube = false;
                     config.onCubeHover(e && e.srcEvent, null);
@@ -1586,6 +1598,15 @@ void main(void) {
                     this.invertPan = true;
                 }
                 handleEvent(event) {
+                    //emit('mouse_event', event.type);
+                    //wont change
+                    if (event.type == 'panend')
+                        console.log("dalu," + Date.now() + ",VizTransform,VisualizationMoved");
+                    if (event.type == 'wheel')
+                        if (event['delta'] == 100)
+                            console.log("dalu," + Date.now() + ",VizTransform,VisualizationZoomIn");
+                        else
+                            console.log("dalu," + Date.now() + ",VizTransform,VisualizationZoomOut");
                     if (event.type === 'doubletap') {
                         if (factoryOptions && factoryOptions.doubleClickHandler) {
                             return factoryOptions.doubleClickHandler(event, this);

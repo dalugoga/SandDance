@@ -20,7 +20,10 @@
     "watch-typescript": "tsc -p . -w",
     "build-typescript": "tsc -p .",
     "bundle": "rollup -c",
-    "build:sanddance-core": "npm run build-typescript && npm run bundle"
+    "build:sanddance-core": "npm run build-typescript && npm run bundle",
+
+
+    "my-build": "npm run build:sanddance-core"
   },
   "keywords": [
     "vega",
@@ -46,3 +49,5 @@
     "vega": "5.20"
   }
 }
+
+

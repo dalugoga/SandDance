@@ -22,7 +22,9 @@
     "bundle": "parcel build ./bundle/umd.js",
     "deploy": "node ./scripts/deploy.js",
     "prebuild:sanddance-core": "node ./scripts/prebuild.js",
-    "build:sanddance-core": "npm run build-typescript && node ../../scripts/version.js && npm run bundle && npm run build-css"
+    "build:sanddance-core": "npm run build-typescript && node ../../scripts/version.js && npm run bundle && npm run build-css",
+
+    "my-build": "npm run build:sanddance-core"
   },
   "targets": {
     "main": false,

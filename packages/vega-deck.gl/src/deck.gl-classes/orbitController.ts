@@ -1,7 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
+//
 import OrbitController from '@deck.gl/core/controllers/orbit-controller';
 import { base } from '../base';
+//import {emit} from  'scripts/emitter';
 
 export interface OrbitControllerClassOptions {
     doubleClickHandler?: (e: MouseEvent, orbitController: OrbitController_Class) => void;
@@ -21,6 +23,18 @@ export function createOrbitControllerClass(factoryOptions: OrbitControllerClassO
             }
 
             handleEvent(event: MouseEvent) {
+                //emit('mouse_event', event.type);
+                //wont change
+
+                if (event.type == 'panend')
+                    console.log("dalu," + Date.now() + ",VizTransform,VisualizationMoved");
+                
+                if (event.type == 'wheel')
+                    if (event['delta'] == 100)
+                        console.log("dalu," + Date.now() + ",VizTransform,VisualizationZoomIn");
+                    else
+                        console.log("dalu," + Date.now() + ",VizTransform,VisualizationZoomOut");
+
                 if (event.type === 'doubletap') {
                     if (factoryOptions && factoryOptions.doubleClickHandler) {
                         return factoryOptions.doubleClickHandler(event, this);

@@ -6,7 +6,7 @@
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
 
-(function(modules, entry, mainEntry, parcelRequireName, globalName) {
+(function (modules, entry, mainEntry, parcelRequireName, globalName) {
   /* eslint-disable no-undef */
   var globalObject =
     typeof globalThis !== 'undefined'
@@ -99,9 +99,9 @@
   newRequire.modules = modules;
   newRequire.cache = cache;
   newRequire.parent = previousRequire;
-  newRequire.register = function(id, exports) {
+  newRequire.register = function (id, exports) {
     modules[id] = [
-      function(require, module) {
+      function (require, module) {
         module.exports = exports;
       },
       {},
@@ -109,7 +109,7 @@
   };
 
   Object.defineProperty(newRequire, 'root', {
-    get: function() {
+    get: function () {
       return globalObject[parcelRequireName];
     },
   });
@@ -131,7 +131,7 @@
 
       // RequireJS
     } else if (typeof define === 'function' && define.amd) {
-      define(function() {
+      define(function () {
         return mainExports;
       });
 
@@ -140,7 +140,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"jbvTk":[function(require,module,exports) {
+})({"aveFs":[function(require,module,exports) {
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
 var _es6 = require("../dist/es6");
@@ -229,7 +229,7 @@ vega.loader().load(dataUrl).then((tsv_data)=>{
     selected(0);
 });
 
-},{"../dist/es6":"euhvD"}],"euhvD":[function(require,module,exports) {
+},{"../dist/es6":"dZq59"}],"dZq59":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Copyright (c) Microsoft Corporation. All rights reserved.
@@ -245,7 +245,7 @@ parcelHelpers.exportAll(_interfaces, exports);
 var _types = require("./types");
 parcelHelpers.exportAll(_types, exports);
 
-},{"./build":"1PpvK","./constants":"1t33I","./inference":"1TgWB","./interfaces":"6lM8D","./types":"jrCG9","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"1PpvK":[function(require,module,exports) {
+},{"./build":"dnBlE","./constants":"9DYBa","./inference":"h9EWV","./interfaces":"GI3zT","./types":"fignF","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"dnBlE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "build", ()=>build
@@ -304,7 +304,7 @@ function build(specContext, currData) {
     return specResult;
 }
 
-},{"./charts":"3jPAH","./inference":"1TgWB","./specBuilder":"kpKNP","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"3jPAH":[function(require,module,exports) {
+},{"./charts":"5WLLM","./inference":"h9EWV","./specBuilder":"a8XBo","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"5WLLM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getSpecBuilderPropsForChart", ()=>getSpecBuilderPropsForChart
@@ -369,7 +369,7 @@ function getSpecBuilderPropsForChart(specContext) {
     }
 }
 
-},{"./barchartH":"iOeTp","./barchartV":"h9IPg","./density":"je2Nv","./grid":"kiFt0","./scatterplot":"7abiv","./stacks":"cBy3D","./strips":"ghx3s","./treemap":"dLaAN","../facetLayout":"2Gjfb","../constants":"1t33I","../defaults":"3ylwt","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"iOeTp":[function(require,module,exports) {
+},{"./barchartH":"gkIpS","./barchartV":"gx8nQ","./density":"9TwPO","./grid":"dwgbD","./scatterplot":"jtCrd","./stacks":"9EUpd","./strips":"hPozH","./treemap":"8BhlG","../facetLayout":"imCrR","../constants":"9DYBa","../defaults":"jWm4F","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"gkIpS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Copyright (c) Microsoft Corporation. All rights reserved.
@@ -564,7 +564,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../constants":"1t33I","../defaults":"3ylwt","../size":"akJ0W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"1t33I":[function(require,module,exports) {
+},{"../constants":"9DYBa","../defaults":"jWm4F","../size":"hUVil","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9DYBa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FieldNames", ()=>FieldNames
@@ -646,7 +646,7 @@ const SignalNames = {
 const Other = '__Other';
 const ColorScaleNone = 'none';
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"jMF8S":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"inDGf":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -659,9 +659,7 @@ exports.defineInteropFlag = function(a) {
 };
 exports.exportAll = function(source, dest) {
     Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule') return;
-        // Skip duplicate re-exports when they have the same value.
-        if (key in dest && dest[key] === source[key]) return;
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
         Object.defineProperty(dest, key, {
             enumerable: true,
             get: function() {
@@ -678,7 +676,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"3ylwt":[function(require,module,exports) {
+},{}],"jWm4F":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "defaultBins", ()=>defaultBins
@@ -739,7 +737,7 @@ const axesOffsetY = 120;
 const scatterSizedMin = 10;
 const scatterSizedDiv = 20;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"akJ0W":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"hUVil":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "allowNoneForSize", ()=>allowNoneForSize
@@ -756,7 +754,7 @@ function allowNoneForSize(specContext) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"h9IPg":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"gx8nQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Copyright (c) Microsoft Corporation. All rights reserved.
@@ -950,7 +948,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../constants":"1t33I","../defaults":"3ylwt","../size":"akJ0W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"je2Nv":[function(require,module,exports) {
+},{"../constants":"9DYBa","../defaults":"jWm4F","../size":"hUVil","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9TwPO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Copyright (c) Microsoft Corporation. All rights reserved.
@@ -1148,7 +1146,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../constants":"1t33I","../defaults":"3ylwt","../size":"akJ0W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"kiFt0":[function(require,module,exports) {
+},{"../constants":"9DYBa","../defaults":"jWm4F","../size":"hUVil","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"dwgbD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _constants = require("../constants");
@@ -1208,7 +1206,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"7abiv":[function(require,module,exports) {
+},{"../constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"jtCrd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _constants = require("../constants");
@@ -1289,7 +1287,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"cBy3D":[function(require,module,exports) {
+},{"../constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9EUpd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _defaults = require("../defaults");
@@ -1401,7 +1399,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../defaults":"3ylwt","../constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"ghx3s":[function(require,module,exports) {
+},{"../defaults":"jWm4F","../constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"hPozH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _constants = require("../constants");
@@ -1487,7 +1485,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"dLaAN":[function(require,module,exports) {
+},{"../constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"8BhlG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _constants = require("../constants");
@@ -1575,7 +1573,7 @@ exports.default = function(specContext) {
     };
 };
 
-},{"../constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"2Gjfb":[function(require,module,exports) {
+},{"../constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"imCrR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getFacetLayout", ()=>getFacetLayout
@@ -1641,7 +1639,7 @@ function getFacetLayout(facetStyle, facetColumn, facetVColumn, axisTextColor) {
     };
 }
 
-},{"./defaults":"3ylwt","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"1TgWB":[function(require,module,exports) {
+},{"./defaults":"jWm4F","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"h9EWV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /**
@@ -1768,7 +1766,7 @@ function detectSequentialColumn(column, data) {
     return true;
 }
 
-},{"d3-color":"9ZVln","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"9ZVln":[function(require,module,exports) {
+},{"d3-color":"3ug27","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"3ug27":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "color", ()=>_colorJsDefault.default
@@ -1794,7 +1792,7 @@ var _labJsDefault = parcelHelpers.interopDefault(_labJs);
 var _cubehelixJs = require("./cubehelix.js");
 var _cubehelixJsDefault = parcelHelpers.interopDefault(_cubehelixJs);
 
-},{"./color.js":"WkkeJ","./lab.js":"ilz7W","./cubehelix.js":"klNYx","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"WkkeJ":[function(require,module,exports) {
+},{"./color.js":"6z14F","./lab.js":"1Dghh","./cubehelix.js":"3UlxP","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"6z14F":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Color", ()=>Color
@@ -2147,7 +2145,7 @@ _defineJsDefault.default(Hsl, hsl, _defineJs.extend(Color, {
     return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
 }
 
-},{"./define.js":"jjeTm","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"jjeTm":[function(require,module,exports) {
+},{"./define.js":"1sa7Z","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"1sa7Z":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "extend", ()=>extend
@@ -2162,7 +2160,7 @@ function extend(parent, definition) {
     return prototype;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"ilz7W":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"1Dghh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gray", ()=>gray
@@ -2269,7 +2267,7 @@ _defineJsDefault.default(Hcl, hcl, _defineJs.extend(_colorJs.Color, {
     }
 }));
 
-},{"./define.js":"jjeTm","./color.js":"WkkeJ","./math.js":"fZjuB","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"fZjuB":[function(require,module,exports) {
+},{"./define.js":"1sa7Z","./color.js":"6z14F","./math.js":"c2fW3","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"c2fW3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "deg2rad", ()=>deg2rad
@@ -2279,7 +2277,7 @@ parcelHelpers.export(exports, "rad2deg", ()=>rad2deg
 var deg2rad = Math.PI / 180;
 var rad2deg = 180 / Math.PI;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"klNYx":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"3UlxP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Cubehelix", ()=>Cubehelix
@@ -2320,7 +2318,7 @@ _defineJsDefault.default(Cubehelix, cubehelix, _defineJs.extend(_colorJs.Color, 
     }
 }));
 
-},{"./define.js":"jjeTm","./color.js":"WkkeJ","./math.js":"fZjuB","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"kpKNP":[function(require,module,exports) {
+},{"./define.js":"1sa7Z","./color.js":"6z14F","./math.js":"c2fW3","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"a8XBo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SpecBuilder", ()=>SpecBuilder
@@ -2377,7 +2375,7 @@ class SpecBuilder {
         };
     }
     validate() {
-        const { specContext: specContext1  } = this;
+        const { specContext  } = this;
         const { specCapabilities  } = this.props;
         const { roles  } = specCapabilities;
         const required = roles.filter((r)=>{
@@ -2387,30 +2385,30 @@ class SpecBuilder {
                 case 'undefined':
                     return true;
                 case 'function':
-                    return !r.allowNone(specContext1);
+                    return !r.allowNone(specContext);
             }
         });
         const numeric = roles.filter((r)=>r.excludeCategoric
         );
         const errors = required.map((r)=>{
-            if (specContext1.specColumns[r.role]) return null;
+            if (specContext.specColumns[r.role]) return null;
             else return `Field ${r.role} is required.`;
         }).concat(numeric.map((r)=>{
-            if (specContext1.specColumns[r.role] && !specContext1.specColumns[r.role].quantitative) return `Field ${r.role} must be quantitative.`;
+            if (specContext.specColumns[r.role] && !specContext.specColumns[r.role].quantitative) return `Field ${r.role} must be quantitative.`;
             else return null;
         })).filter(Boolean);
         return errors;
     }
     build() {
-        const { specContext: specContext1  } = this;
+        const { specContext  } = this;
         const { facetLayout , specCapabilities  } = this.props;
-        const { insight , specColumns , specViewOptions  } = specContext1;
+        const { insight , specColumns , specViewOptions  } = specContext;
         const dataName = 'data_source';
         const { vegaSpec , groupMark  } = this.initSpec(dataName);
         const { topColorField , colorDataName  } = _color.addColor({
             scope: vegaSpec,
             dataName,
-            specContext: specContext1,
+            specContext,
             scaleName: _constants.ScaleNames.Color,
             legendDataName: 'data_legend',
             topLookupName: 'data_topcolorlookup',
@@ -2563,8 +2561,8 @@ class SpecBuilder {
                     }
                 }
             });
-            update.fill = _fill.fill(specContext1, topColorField, _constants.ScaleNames.Color);
-            update.opacity = _fill.opacity(specContext1);
+            update.fill = _fill.fill(specContext, topColorField, _constants.ScaleNames.Color);
+            update.opacity = _fill.opacity(specContext);
         }
         return {
             specCapabilities,
@@ -2574,8 +2572,8 @@ class SpecBuilder {
     initSpec(dataName) {
         const { globalSignals  } = this;
         const { minCellWidth , minCellHeight , plotOffsetLeft , plotOffsetBottom , plotOffsetTop , plotOffsetRight , plotHeightOut , plotWidthOut  } = globalSignals;
-        const { specContext: specContext1  } = this;
-        const { insight  } = specContext1;
+        const { specContext  } = this;
+        const { insight  } = specContext;
         const groupMark = {
             type: 'group',
             //style: 'cell',
@@ -2613,7 +2611,7 @@ class SpecBuilder {
             marks: [
                 groupMark
             ],
-            signals: _signals.textSignals(specContext1, _constants.SignalNames.ViewportHeight).concat([
+            signals: _signals.textSignals(specContext, _constants.SignalNames.ViewportHeight).concat([
                 minCellWidth,
                 minCellHeight,
                 {
@@ -2717,9 +2715,9 @@ class SpecBuilder {
         };
     }
     createLayout(layoutPair, buildProps) {
-        const { layoutType , props: props1  } = layoutPair;
+        const { layoutType , props  } = layoutPair;
         const layoutBuildProps = Object.assign(Object.assign({
-        }, props1), buildProps);
+        }, props), buildProps);
         const layoutClass = _index.layoutClasses[layoutType];
         const layout = new layoutClass(layoutBuildProps);
         layout.id = buildProps.id;
@@ -2727,7 +2725,7 @@ class SpecBuilder {
     }
 }
 
-},{"./axes":"1oKBP","./color":"83a70","./constants":"1t33I","./defaults":"3ylwt","./facetTitle":"bSVTk","./fill":"5uOBc","./globalScope":"4o6ok","./scope":"lHDQD","./signals":"hwNqr","./layouts/index":"fPHbx","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"1oKBP":[function(require,module,exports) {
+},{"./axes":"bubTE","./color":"2jVQW","./constants":"9DYBa","./defaults":"jWm4F","./facetTitle":"2nJKA","./fill":"540RO","./globalScope":"9Y0Iw","./scope":"4gVYT","./signals":"kfZ5R","./layouts/index":"4rNor","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"bubTE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addGlobalAxes", ()=>addGlobalAxes
@@ -2737,8 +2735,8 @@ parcelHelpers.export(exports, "addGlobalAxes", ()=>addGlobalAxes
 var _constants = require("./constants");
 var _defaults = require("./defaults");
 var _scope = require("./scope");
-function addGlobalAxes(props) {
-    const { axesOffsets , axisScales , axesScopes , axesTitlePadding , allGlobalScales , globalScope , labelBaseline , plotOffsetSignals , specColumns , specViewOptions  } = props;
+function addGlobalAxes(props1) {
+    const { axesOffsets , axisScales , axesScopes , axesTitlePadding , allGlobalScales , globalScope , labelBaseline , plotOffsetSignals , specColumns , specViewOptions  } = props1;
     const { scope  } = globalScope;
     allGlobalScales.forEach((globalScales)=>{
         const { scales  } = globalScales;
@@ -2750,7 +2748,7 @@ function addGlobalAxes(props) {
                 let zindex = undefined;
                 if (xyz === 'z') {
                     showAxes = false;
-                    if (props.view === '3d' && specViewOptions.zAxisOptions && !props.faceted) {
+                    if (props1.view === '3d' && specViewOptions.zAxisOptions && !props1.faceted) {
                         if (specViewOptions.zAxisOptions.showZAxis) {
                             showAxes = true;
                             zindex = specViewOptions.zAxisOptions.zIndex;
@@ -2766,7 +2764,7 @@ function addGlobalAxes(props) {
                             quantitative: true
                         };
                         const title = axisScale.title;
-                        const props1 = {
+                        const props = {
                             title,
                             horizontal,
                             column,
@@ -2777,7 +2775,7 @@ function addGlobalAxes(props) {
                             zindex
                         };
                         axesScopes['main'].forEach((a)=>_scope.addAxes(a.scope, createAxis(Object.assign(Object.assign({
-                            }, props1), {
+                            }, props), {
                                 scale: a.scale || _scales[0],
                                 showTitle: a.title,
                                 showLabels: a.labels,
@@ -2785,7 +2783,7 @@ function addGlobalAxes(props) {
                             })))
                         );
                         if (axesScopes[xyz]) axesScopes[xyz].forEach((a)=>_scope.addAxes(a.scope, createAxis(Object.assign(Object.assign({
-                            }, props1), {
+                            }, props), {
                                 scale: a.scale || _scales[0],
                                 showTitle: a.title,
                                 showLabels: a.labels,
@@ -2844,7 +2842,7 @@ function createAxis(props) {
     return axis;
 }
 
-},{"./constants":"1t33I","./defaults":"3ylwt","./scope":"lHDQD","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"lHDQD":[function(require,module,exports) {
+},{"./constants":"9DYBa","./defaults":"jWm4F","./scope":"4gVYT","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"4gVYT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addAxes", ()=>addAxes
@@ -2907,7 +2905,7 @@ function addOffsets(...offsets) {
     return offsets.filter(Boolean).join(' + ');
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"83a70":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"2jVQW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addColor", ()=>addColor
@@ -2956,7 +2954,7 @@ function addColor(props) {
     };
 }
 
-},{"./scope":"lHDQD","./scales":"duG64","./signals":"hwNqr","./constants":"1t33I","./legends":"h6DHR","./top":"2AYxV","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"duG64":[function(require,module,exports) {
+},{"./scope":"4gVYT","./scales":"dclqt","./signals":"kfZ5R","./constants":"9DYBa","./legends":"9CU11","./top":"90bnZ","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"dclqt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "linearScale", ()=>linearScale
@@ -3052,7 +3050,7 @@ function binnableColorScale(scaleName, colorBin, data, field, scheme) {
     }
 }
 
-},{"./constants":"1t33I","./expr":"2IX4W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"2IX4W":[function(require,module,exports) {
+},{"./constants":"9DYBa","./expr":"jrX40","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"jrX40":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Copyright (c) Microsoft Corporation. All rights reserved.
@@ -3075,7 +3073,7 @@ function exprSafeFieldName(field) {
     return field.replace(/[.,:;+=\-/<>{}|~!@#$%^*[\]`'"()?\s\\]/g, '');
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"hwNqr":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"kfZ5R":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "defaultZProportion", ()=>defaultZProportion
@@ -3199,13 +3197,13 @@ function modifySignal(s, fn, update) {
     s.update = `${fn}((${s.update}), (${update}))`;
 }
 
-},{"./constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"h6DHR":[function(require,module,exports) {
+},{"./constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9CU11":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getLegends", ()=>getLegends
 );
-function legend(column, fill) {
-    const legend1 = {
+function legend1(column, fill) {
+    const legend = {
         orient: 'none',
         title: column.name,
         fill,
@@ -3220,19 +3218,19 @@ function legend(column, fill) {
         }
     };
     if (column.quantitative) {
-        legend1.type = 'symbol';
-        legend1.format = '~r';
+        legend.type = 'symbol';
+        legend.format = '~r';
     }
-    return legend1;
+    return legend;
 }
 function getLegends(context, fill) {
     const { specColumns , insight  } = context;
     if (specColumns.color && !insight.hideLegend && !insight.directColor && !specColumns.color.isColorData) return [
-        legend(specColumns.color, fill)
+        legend1(specColumns.color, fill)
     ];
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"2AYxV":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"90bnZ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "topLookup", ()=>topLookup
@@ -3297,7 +3295,7 @@ function topLookup(column, count, source, legend, lookupName, fieldName, indexNa
     return data;
 }
 
-},{"./constants":"1t33I","./expr":"2IX4W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"bSVTk":[function(require,module,exports) {
+},{"./constants":"9DYBa","./expr":"jrX40","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"2nJKA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addFacetColRowTitles", ()=>addFacetColRowTitles
@@ -3552,7 +3550,7 @@ function createSequence(dataName, countSignal) {
     };
 }
 
-},{"./scope":"lHDQD","./constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"5uOBc":[function(require,module,exports) {
+},{"./scope":"4gVYT","./constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"540RO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "fill", ()=>fill
@@ -3582,7 +3580,7 @@ function opacity(context) {
     return result;
 }
 
-},{"./constants":"1t33I","./expr":"2IX4W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"4o6ok":[function(require,module,exports) {
+},{"./constants":"9DYBa","./expr":"jrX40","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9Y0Iw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "GlobalScope", ()=>GlobalScope
@@ -3593,9 +3591,9 @@ var _constants = require("./constants");
 var _scope = require("./scope");
 class GlobalScope {
     constructor(props){
-        const { dataName , markGroup: markGroup1 , scope , signals  } = props;
+        const { dataName , markGroup , scope , signals  } = props;
         this.scope = scope;
-        this._markGroup = markGroup1;
+        this._markGroup = markGroup;
         this.signals = signals;
         this.data = _scope.getDataByName(scope.data, dataName).data;
         this._markDataName = dataName;
@@ -3625,7 +3623,7 @@ class GlobalScope {
     }
 }
 
-},{"./constants":"1t33I","./scope":"lHDQD","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"fPHbx":[function(require,module,exports) {
+},{"./constants":"9DYBa","./scope":"4gVYT","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"4rNor":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "layoutClasses", ()=>layoutClasses
@@ -3655,7 +3653,7 @@ const layoutClasses = {
     Wrap: _wrap.Wrap
 };
 
-},{"./aggregateContainer":"2O4nj","./aggregateSquare":"6wxfJ","./band":"2X3Vg","./cross":"in4x6","./scatter":"6EFcR","./square":"eYIiP","./stack":"jeLuC","./strip":"9us2O","./treemap":"6XNP4","./wrap":"6iuK6","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"2O4nj":[function(require,module,exports) {
+},{"./aggregateContainer":"ejmGy","./aggregateSquare":"10Rk3","./band":"3wsUh","./cross":"1hwDY","./scatter":"1Ae0F","./square":"eSAiw","./stack":"kBfmu","./strip":"9hNoE","./treemap":"9rQjj","./wrap":"4mr1R","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"ejmGy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AggregateContainer", ()=>AggregateContainer
@@ -3693,8 +3691,8 @@ class AggregateContainer extends _layout.Layout {
         }
     }
     build() {
-        const { aggregation , names , props: props1  } = this;
-        const { dock , globalScope , groupings , niceScale , parentScope , showAxes  } = props1;
+        const { aggregation , names , props  } = this;
+        const { dock , globalScope , groupings , niceScale , parentScope , showAxes  } = props;
         _scope.addTransforms(globalScope.data, Object.assign(Object.assign({
         }, this.getTransforms(aggregation, _scope.getGroupBy(groupings))), {
             as: [
@@ -3706,7 +3704,7 @@ class AggregateContainer extends _layout.Layout {
             signal: names.globalAggregateExtentSignal
         });
         _scope.addSignals(globalScope.scope, {
-            name: props1.globalAggregateMaxExtentSignal,
+            name: props.globalAggregateMaxExtentSignal,
             update: `${names.globalAggregateExtentSignal}[1]`
         });
         const horizontal = dock === 'left';
@@ -3723,7 +3721,7 @@ class AggregateContainer extends _layout.Layout {
             domain: [
                 0,
                 {
-                    signal: props1.globalAggregateMaxExtentSignal
+                    signal: props.globalAggregateMaxExtentSignal
                 }
             ],
             range: horizontal ? [
@@ -3741,9 +3739,9 @@ class AggregateContainer extends _layout.Layout {
             zero: true,
             reverse: dock === 'top'
         };
-        const globalAggregateMaxExtentScaledValue = `scale(${JSON.stringify(names.scale)}, ${props1.globalAggregateMaxExtentSignal})`;
+        const globalAggregateMaxExtentScaledValue = `scale(${JSON.stringify(names.scale)}, ${props.globalAggregateMaxExtentSignal})`;
         _scope.addSignals(globalScope.scope, {
-            name: props1.globalAggregateMaxExtentScaledSignal,
+            name: props.globalAggregateMaxExtentScaledSignal,
             update: dock === 'bottom' ? `${parentScope.sizeSignals.layoutHeight} - ${globalAggregateMaxExtentScaledValue}` : globalAggregateMaxExtentScaledValue
         });
         return {
@@ -3809,10 +3807,10 @@ class AggregateContainer extends _layout.Layout {
         return trans;
     }
     getAggregation() {
-        const { props: props1  } = this;
+        const { props  } = this;
         let s;
-        if (props1.dock === 'left') s = props1.axesScales.x;
-        else s = props1.axesScales.y;
+        if (props.dock === 'left') s = props.axesScales.x;
+        else s = props.axesScales.y;
         switch(s.aggregate){
             case 'sum':
                 return 'sum';
@@ -3822,7 +3820,7 @@ class AggregateContainer extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../constants":"1t33I","../expr":"2IX4W","../scope":"lHDQD","../selection":"gqqkZ","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"8pPe8":[function(require,module,exports) {
+},{"./layout":"CHfr7","../constants":"9DYBa","../expr":"jrX40","../scope":"4gVYT","../selection":"auH5A","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"CHfr7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Layout", ()=>Layout
@@ -3843,7 +3841,7 @@ class Layout {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"gqqkZ":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"auH5A":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "testForCollapseSelection", ()=>testForCollapseSelection
@@ -3855,7 +3853,7 @@ function testForCollapseSelection() {
     return `datum.${_constants.FieldNames.Collapsed}`;
 }
 
-},{"./constants":"1t33I","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"6wxfJ":[function(require,module,exports) {
+},{"./constants":"9DYBa","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"10Rk3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AggregateSquare", ()=>AggregateSquare
@@ -3880,8 +3878,8 @@ class AggregateSquare extends _layout.Layout {
         };
     }
     build() {
-        const { names , props: props1  } = this;
-        const { aggregation , globalScope , groupings , onBuild , parentScope  } = props1;
+        const { names , props  } = this;
+        const { aggregation , globalScope , groupings , onBuild , parentScope  } = props;
         const { sizeSignals  } = parentScope;
         _scope.addTransforms(globalScope.data, Object.assign(Object.assign({
         }, this.getTransforms(aggregation, _scope.getGroupBy(groupings))), {
@@ -3950,7 +3948,7 @@ class AggregateSquare extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../expr":"2IX4W","../scope":"lHDQD","../selection":"gqqkZ","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"2X3Vg":[function(require,module,exports) {
+},{"./layout":"CHfr7","../expr":"jrX40","../scope":"4gVYT","../selection":"auH5A","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"3wsUh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Band", ()=>Band
@@ -3980,8 +3978,8 @@ class Band extends _layout.Layout {
         return this.bin.fields;
     }
     build() {
-        const { bin , names , props: props1  } = this;
-        const { globalScope , minBandWidth , orientation , parentScope , showAxes  } = props1;
+        const { bin , names , props  } = this;
+        const { globalScope , minBandWidth , orientation , parentScope , showAxes  } = props;
         const binField = bin.fields[0];
         if (bin.native === false) {
             _scope.addSignals(globalScope.scope, ...bin.signals);
@@ -4011,7 +4009,7 @@ class Band extends _layout.Layout {
         });
         const scales = this.getScales(bin, horizontal);
         let encodingRuleMap;
-        if (!props1.excludeEncodingRuleMap) encodingRuleMap = horizontal ? {
+        if (!props.excludeEncodingRuleMap) encodingRuleMap = horizontal ? {
             x: [
                 {
                     test: _selection.testForCollapseSelection(),
@@ -4058,8 +4056,8 @@ class Band extends _layout.Layout {
         };
     }
     getOffset(horizontal, binField) {
-        const { names , props: props1  } = this;
-        const { parentScope  } = props1;
+        const { names , props  } = this;
+        const { parentScope  } = props;
         return {
             x: _scope.addOffsets(parentScope.offsets.x, horizontal ? '' : `scale(${JSON.stringify(names.xScale)}, datum[${JSON.stringify(binField)}])`),
             y: _scope.addOffsets(parentScope.offsets.y, horizontal ? `scale(${JSON.stringify(names.yScale)}, datum[${JSON.stringify(binField)}])` : ''),
@@ -4067,13 +4065,13 @@ class Band extends _layout.Layout {
             w: horizontal ? parentScope.offsets.w : names.bandWidth
         };
     }
-    getScales(bin, horizontal) {
+    getScales(bin, horizontal1) {
         const { names  } = this;
         const { parentScope  } = this.props;
         const binField = _expr.safeFieldName(bin.fields[0]);
         const scales = [];
         let bandScale;
-        if (horizontal) bandScale = {
+        if (horizontal1) bandScale = {
             type: 'band',
             name: names.yScale,
             range: [
@@ -4111,7 +4109,7 @@ class Band extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../bin":"gwlvx","../expr":"2IX4W","../scope":"lHDQD","../selection":"gqqkZ","../signals":"hwNqr","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"gwlvx":[function(require,module,exports) {
+},{"./layout":"CHfr7","../bin":"duUSH","../expr":"jrX40","../scope":"4gVYT","../selection":"auH5A","../signals":"kfZ5R","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"duUSH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "binnable", ()=>binnable
@@ -4240,7 +4238,7 @@ function binnable(prefix, domainDataName, discreteColumn) {
     }
 }
 
-},{"./constants":"1t33I","./expr":"2IX4W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"in4x6":[function(require,module,exports) {
+},{"./constants":"9DYBa","./expr":"jrX40","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"1hwDY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Cross", ()=>Cross
@@ -4276,8 +4274,8 @@ class Cross extends _layout.Layout {
         return this.binX.fields.concat(this.binY.fields);
     }
     build() {
-        const { binX , binY , names , prefix , props: props1  } = this;
-        const { axisTextColor , colRowTitles , globalScope , parentScope  } = props1;
+        const { binX , binY , names , prefix , props  } = this;
+        const { axisTextColor , colRowTitles , globalScope , parentScope  } = props;
         const titles = {
             x: {
                 dataName: null,
@@ -4455,7 +4453,7 @@ class Cross extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../bin":"gwlvx","../constants":"1t33I","../facetSearch":"5bHzS","../facetTitle":"bSVTk","../ordinal":"iy5ix","../scope":"lHDQD","../signals":"hwNqr","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"5bHzS":[function(require,module,exports) {
+},{"./layout":"CHfr7","../bin":"duUSH","../constants":"9DYBa","../facetSearch":"1niq8","../facetTitle":"2nJKA","../ordinal":"9s1AA","../scope":"4gVYT","../signals":"kfZ5R","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"1niq8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "displayBin", ()=>displayBin
@@ -4502,7 +4500,7 @@ function serializeAsVegaExpression(bin, firstFieldName, lastFieldName, clause) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"iy5ix":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9s1AA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createOrdinals", ()=>createOrdinals
@@ -4563,7 +4561,7 @@ function ordinalScale(dataName, scaleName, binFields) {
     };
 }
 
-},{"./constants":"1t33I","./expr":"2IX4W","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"6EFcR":[function(require,module,exports) {
+},{"./constants":"9DYBa","./expr":"jrX40","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"1Ae0F":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Scatter", ()=>Scatter
@@ -4594,8 +4592,8 @@ class Scatter extends _layout.Layout {
         };
     }
     build() {
-        const { names , prefix , props: props1  } = this;
-        const { globalScope , parentScope , scatterPointScaleDisplay , size , x , y , z , zGrounded  } = props1;
+        const { names , prefix , props  } = this;
+        const { globalScope , parentScope , scatterPointScaleDisplay , size , x , y , z , zGrounded  } = props;
         const qsize = size && size.quantitative && size;
         _scope.addSignals(globalScope.scope, {
             name: _constants.SignalNames.PointScale,
@@ -4779,7 +4777,7 @@ class Scatter extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../constants":"1t33I","../defaults":"3ylwt","../expr":"2IX4W","../scales":"duG64","../scope":"lHDQD","../selection":"gqqkZ","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"eYIiP":[function(require,module,exports) {
+},{"./layout":"CHfr7","../constants":"9DYBa","../defaults":"jWm4F","../expr":"jrX40","../scales":"dclqt","../scope":"4gVYT","../selection":"auH5A","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"eSAiw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Square", ()=>Square
@@ -4807,8 +4805,8 @@ class Square extends _layout.Layout {
         };
     }
     build() {
-        const { names , prefix , props: props1  } = this;
-        const { fillDirection , globalScope , groupings , parentScope , collapseYHeight , sortBy , z  } = props1;
+        const { names , prefix , props  } = this;
+        const { fillDirection , globalScope , groupings , parentScope , collapseYHeight , sortBy , z  } = props;
         const zScale = _zBase.addZScale(z, globalScope.zSize, globalScope.data.name, names.zScale);
         _scope.addTransforms(globalScope.data, Object.assign({
             type: 'stack',
@@ -4907,9 +4905,9 @@ class Square extends _layout.Layout {
         }
     }
     addSignals() {
-        const { names , props: props1  } = this;
-        const { fillDirection , globalScope , groupings , parentScope  } = props1;
-        let { maxGroupedFillSize , maxGroupedUnits  } = props1;
+        const { names , props  } = this;
+        const { fillDirection , globalScope , groupings , parentScope  } = props;
+        let { maxGroupedFillSize , maxGroupedUnits  } = props;
         if (!maxGroupedUnits) {
             if (groupings) {
                 _scope.addTransforms(globalScope.data, {
@@ -4980,7 +4978,7 @@ class Square extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../constants":"1t33I","../expr":"2IX4W","../scope":"lHDQD","../selection":"gqqkZ","../zBase":"g4Q8y","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"g4Q8y":[function(require,module,exports) {
+},{"./layout":"CHfr7","../constants":"9DYBa","../expr":"jrX40","../scope":"4gVYT","../selection":"auH5A","../zBase":"hD9Cg","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"hD9Cg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addZScale", ()=>addZScale
@@ -5002,7 +5000,7 @@ function addZScale(z, zSize, dataName, zScaleName) {
     }
 }
 
-},{"./constants":"1t33I","./scales":"duG64","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"jeLuC":[function(require,module,exports) {
+},{"./constants":"9DYBa","./scales":"dclqt","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"kBfmu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Stack", ()=>Stack
@@ -5036,8 +5034,8 @@ class Stack extends _layout.Layout {
         };
     }
     build() {
-        const { names , props: props1  } = this;
-        const { globalScope , groupings , parentScope , sort  } = props1;
+        const { names , props  } = this;
+        const { globalScope , groupings , parentScope , sort  } = props;
         const { sizeSignals  } = parentScope;
         _scope.addTransforms(globalScope.data, {
             type: 'joinaggregate',
@@ -5072,7 +5070,7 @@ class Stack extends _layout.Layout {
                     type: 'sequence',
                     start: 1,
                     stop: {
-                        signal: `sqrt(${names.globalExtent}[1])`
+                        signal: `max(sqrt(${names.globalExtent}[1]),2)`
                     }
                 },
                 {
@@ -5235,7 +5233,7 @@ class Stack extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../expr":"2IX4W","../scope":"lHDQD","../selection":"gqqkZ","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"9us2O":[function(require,module,exports) {
+},{"./layout":"CHfr7","../expr":"jrX40","../scope":"4gVYT","../selection":"auH5A","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9hNoE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Strip", ()=>Strip
@@ -5262,8 +5260,8 @@ class Strip extends _layout.Layout {
         };
     }
     build() {
-        const { names , prefix , props: props1  } = this;
-        const { addPercentageScale , globalScope , groupings , orientation , size , sort , sortOrder , parentScope , z  } = props1;
+        const { names , prefix , props  } = this;
+        const { addPercentageScale , globalScope , groupings , orientation , size , sort , sortOrder , parentScope , z  } = props;
         const zScale = _zBase.addZScale(z, globalScope.zSize, globalScope.data.name, names.zScale);
         const horizontal = orientation === 'horizontal';
         const transform = [];
@@ -5387,7 +5385,7 @@ class Strip extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../constants":"1t33I","../expr":"2IX4W","../scope":"lHDQD","../selection":"gqqkZ","../zBase":"g4Q8y","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"6XNP4":[function(require,module,exports) {
+},{"./layout":"CHfr7","../constants":"9DYBa","../expr":"jrX40","../scope":"4gVYT","../selection":"auH5A","../zBase":"hD9Cg","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"9rQjj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Treemap", ()=>Treemap
@@ -5425,8 +5423,8 @@ class Treemap extends _layout.Layout {
         };
     }
     build() {
-        const { names , props: props1  } = this;
-        const { globalScope , parentScope , treeMapMethod , z  } = props1;
+        const { names , props  } = this;
+        const { globalScope , parentScope , treeMapMethod , z  } = props;
         const zScale = _zBase.addZScale(z, globalScope.zSize, globalScope.data.name, names.zScale);
         const offsets = {
             x: _scope.addOffsets(parentScope.offsets.x, fn(names.fieldX0)),
@@ -5467,8 +5465,8 @@ class Treemap extends _layout.Layout {
         });
     }
     transformedMark(offsets) {
-        const { names , props: props1  } = this;
-        const { globalScope , groupings , parentScope  } = props1;
+        const { names , props  } = this;
+        const { globalScope , groupings , parentScope  } = props;
         if (groupings.length) {
             //treemap transform can't have it's boundary size grouped, so we need to facet the data.
             _scope.addData(globalScope.scope, {
@@ -5531,9 +5529,9 @@ class Treemap extends _layout.Layout {
             return this.addMark(offsets, globalScope.markGroup, globalScope.markDataName);
         }
     }
-    addMark(offsets, markParent, markDataName) {
-        const { names , prefix , props: props1  } = this;
-        const { z  } = props1;
+    addMark(offsets1, markParent, markDataName) {
+        const { names , prefix , props  } = this;
+        const { z  } = props;
         const mark = {
             name: prefix,
             type: 'rect',
@@ -5543,10 +5541,10 @@ class Treemap extends _layout.Layout {
             encode: {
                 update: Object.assign({
                     width: {
-                        signal: offsets.w
+                        signal: offsets1.w
                     },
                     height: {
-                        signal: offsets.h
+                        signal: offsets1.h
                     }
                 }, z && {
                     z: {
@@ -5569,8 +5567,8 @@ class Treemap extends _layout.Layout {
         return mark;
     }
     treemapTransform(treemapData, widthSignal, heightSignal) {
-        const { names , props: props1  } = this;
-        const { group , size  } = props1;
+        const { names , props  } = this;
+        const { group , size  } = props;
         _scope.addTransforms(treemapData, {
             type: 'filter',
             expr: `datum[${JSON.stringify(size.name)}] > 0`
@@ -5619,7 +5617,7 @@ function subtract(...fields) {
     ).join(' - ');
 }
 
-},{"./layout":"8pPe8","../constants":"1t33I","../expr":"2IX4W","../scope":"lHDQD","../selection":"gqqkZ","../zBase":"g4Q8y","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"6iuK6":[function(require,module,exports) {
+},{"./layout":"CHfr7","../constants":"9DYBa","../expr":"jrX40","../scope":"4gVYT","../selection":"auH5A","../zBase":"hD9Cg","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"4mr1R":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Wrap", ()=>Wrap
@@ -5667,8 +5665,8 @@ class Wrap extends _layout.Layout {
         return this.bin.fields;
     }
     build() {
-        const { bin , names , prefix , props: props1  } = this;
-        const { axisTextColor , cellTitles , globalScope , parentScope  } = props1;
+        const { bin , names , prefix , props  } = this;
+        const { axisTextColor , cellTitles , globalScope , parentScope  } = props;
         let ordinalBinData;
         if (bin.native === false) {
             _scope.addSignals(globalScope.scope, ...bin.signals);
@@ -5942,9 +5940,13 @@ class Wrap extends _layout.Layout {
     }
 }
 
-},{"./layout":"8pPe8","../bin":"gwlvx","../constants":"1t33I","../expr":"2IX4W","../facetSearch":"5bHzS","../facetTitle":"bSVTk","../ordinal":"iy5ix","../scope":"lHDQD","../signals":"hwNqr","@parcel/transformer-js/src/esmodule-helpers.js":"jMF8S"}],"6lM8D":[function(require,module,exports) {
+},{"./layout":"CHfr7","../bin":"duUSH","../constants":"9DYBa","../expr":"jrX40","../facetSearch":"1niq8","../facetTitle":"2nJKA","../ordinal":"9s1AA","../scope":"4gVYT","../signals":"kfZ5R","@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"GI3zT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 
-},{}],"jrCG9":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}],"fignF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 
-},{}]},["jbvTk"], "jbvTk", "parcelRequired43a")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"inDGf"}]},["aveFs"], "aveFs", "parcelRequired43a")
 

@@ -76,6 +76,7 @@ function _SandDanceReact(props: Props) {
         }
 
         componentDidUpdate() {
+            //console.log("dalu: componentDidUpdate")
             this.viewer.options = VegaDeckGl.util.deepMerge(this.viewer.options, this.props.viewerOptions) as types.ViewerOptions;
             this.view();
         }

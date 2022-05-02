@@ -87,6 +87,7 @@ export function Color(props: Props) {
                         }
                     ]}
                     onChange={(e, o) => {
+                        //console.log("dalu: onChange Color");
                         props.onColorBinChange(o.key as SandDance.specs.ColorBin);
                     }}
                 />

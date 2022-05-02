@@ -34,7 +34,9 @@
         "test-rec": "lerna run test --scope @msrvida/chart-recommender",
         "python-webpack-watch": "lerna run webpack-watch --scope @msrvida/sanddance-jupyter-widget --parallel",
         "azdata-webpack-extension": "lerna run webpack --scope azdata-sanddance --parallel",
-        "vscode-webpack-extension": "lerna run webpack --scope vscode-sanddance --parallel"
+        "vscode-webpack-extension": "lerna run webpack --scope vscode-sanddance --parallel",
+
+        "my-build": "node ./scripts/append_to_package.js && lerna run my-build && npm run deploy"
     },
     "repository": {
         "type": "git",

@@ -6,7 +6,20 @@
         "moduleResolution": "node",
         "outDir": "dist/es6",
         "skipLibCheck": true,
-        "target": "es6"
+        "target": "es6",
+
+        
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny" : false,
+
+
+        "allowJs": true,
+        "checkJs": true,
+        "baseUrl": ".",
+        "paths": {
+            "scripts/*": ["../../scripts/*"]
+        }
     },
     "include": [
         "src"

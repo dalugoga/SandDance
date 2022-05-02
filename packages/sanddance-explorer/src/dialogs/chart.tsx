@@ -42,14 +42,14 @@ const singleFacetLayouts: FacetData[] = [
 ];
 
 export const chartLabelMap: { key: SandDance.specs.Chart, text: string }[] = [
-    {
+    /*{
         key: 'grid',
         text: strings.chartTypeGrid
-    },
+    },*/
     {
         key: 'scatterplot',
         text: strings.chartTypeScatterPlot
-    },
+    }/*,
     {
         key: 'density',
         text: strings.chartTypeDensity
@@ -73,7 +73,7 @@ export const chartLabelMap: { key: SandDance.specs.Chart, text: string }[] = [
     {
         key: 'stacks',
         text: strings.chartTypeStacks
-    }
+    }*/
 ];
 
 export function chartLabel(key: SandDance.specs.Chart) {
@@ -115,7 +115,10 @@ function _Chart(props: Props) {
                                             || (o.key === 'treemap' && props.quantitativeColumns.length === 0)
                                     };
                                 })}
-                                onChange={(e, o) => props.onChangeChartType(o.key as SandDance.specs.Chart)}
+                                onChange={(e, o) => {
+                                    //console.log("dalu: onChangeChartType");
+                                    props.onChangeChartType(o.key as SandDance.specs.Chart)}
+                                }
                             />
                         </div>
                     </Group>
@@ -186,6 +189,7 @@ function _Chart(props: Props) {
                                                     })
                                                 ]}
                                                 onChange={(e, o) => {
+                                                    //console.log("dalu: changeColumnMapping");
                                                     const facetData = o.data as FacetData;
                                                     props.changeColumnMapping('facet', 'facet', null, { facetStyle: facetData.facetStyle });
                                                     if (facetData.facetStyle === 'cross') {
@@ -245,6 +249,7 @@ function _Chart(props: Props) {
                                                 calloutProps={{ style: { minWidth: '18em' } }}
                                                 options={options}
                                                 onChange={(e, o) => {
+                                                    //console.log("dalu: changeColumnMapping 2")
                                                     const totalStyle = o.data as SandDance.specs.TotalStyle;
                                                     let defaultColumn: SandDance.types.Column;
                                                     if (totalStyle.indexOf('sum-') === 0) {
@@ -275,17 +280,25 @@ function _Chart(props: Props) {
                                         selectedColumnName={selectedColumnName}
                                         specRole={specRole}
                                         key={i}
-                                        onChangeSignal={(name, value) => props.onChangeSignal(specRole.role, selectedColumnName, name, value)}
+                                        onChangeSignal={(name, value) => {
+                                            //console.log("dalu: onChangeSignal")
+                                            props.onChangeSignal(specRole.role, selectedColumnName, name, value)
+                                        }}
                                         hideDropdown={hideDropdown}
                                     />
                                 );
                             })}
+                            {/*
                             <div className="sanddance-tooltipMap">
                                 <base.fluentUI.DefaultButton
                                     text={strings.buttonTooltipMapping}
-                                    onClick={() => this.setState({ showTooltipDialog: true })}
+                                    onClick={() => {
+                                        //console.log("dalu: setState({ showTooltipDialog: true })")
+                                        this.setState({ showTooltipDialog: true })}
+                                    }
                                 />
                             </div>
+                            */}
                         </div>
                     </Group>
                     {signals && (
