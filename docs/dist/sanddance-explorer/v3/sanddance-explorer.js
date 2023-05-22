@@ -12566,26 +12566,29 @@ function $d3153b53a9fcaa75$var$_Snapshots(props) {
                         ,
                         iconName: 'Edit'
                     }
-                });
-                if (this.props.snapshots.length > 1) actions.push({
-                    iconButtonProps: {
-                        disabled: i === 0,
-                        themePalette: this.props.themePalette,
-                        title: $ee7b4b80c9b36fcd$export$21c51bc433c16634.buttonMoveUp,
-                        onClick: (e)=>this.props.onMoveUp(i)
-                        ,
-                        iconName: 'SortUp'
-                    }
-                }, {
-                    iconButtonProps: {
-                        disabled: i > this.props.snapshots.length - 2,
-                        themePalette: this.props.themePalette,
-                        title: $ee7b4b80c9b36fcd$export$21c51bc433c16634.buttonMoveDown,
-                        onClick: (e)=>this.props.onMoveDown(i)
-                        ,
-                        iconName: 'SortDown'
-                    }
-                });
+                }); /*
+                        if (this.props.snapshots.length > 1) {
+                            actions.push(
+                                {
+                                    iconButtonProps: {
+                                        disabled: i === 0,
+                                        themePalette: this.props.themePalette,
+                                        title: strings.buttonMoveUp,
+                                        onClick: e => this.props.onMoveUp(i),
+                                        iconName: 'SortUp'
+                                    }
+                                },
+                                {
+                                    iconButtonProps: {
+                                        disabled: i > this.props.snapshots.length - 2,
+                                        themePalette: this.props.themePalette,
+                                        title: strings.buttonMoveDown,
+                                        onClick: e => this.props.onMoveDown(i),
+                                        iconName: 'SortDown'
+                                    }
+                                }
+                            );
+                        }*/ 
                 actions.push({
                     iconButtonProps: {
                         themePalette: this.props.themePalette,
@@ -13130,7 +13133,22 @@ function $1aadf16b3aca4a02$export$1ba59dacbcbf90fe(props) {
             sideTabId: $a27dff4329aa24f2$export$f3b7566ffe363e3b.Color,
             iconName: 'Color',
             title: $ee7b4b80c9b36fcd$export$21c51bc433c16634.labelColor
-        }
+        },
+        {
+            sideTabId: $a27dff4329aa24f2$export$f3b7566ffe363e3b.Snapshots,
+            iconName: 'Camera',
+            title: $ee7b4b80c9b36fcd$export$21c51bc433c16634.labelSnapshots
+        } /*,
+        {
+            sideTabId: SideTabId.History,
+            iconName: 'History',
+            title: strings.labelHistory
+        },
+        {
+            sideTabId: SideTabId.Settings,
+            iconName: 'Settings',
+            title: strings.labelChartSettings
+        }*/ 
     ];
     return $2a6088da9113f540$export$e2253033e6e1df16.react.createElement("div", {
         className: $96c59f30fea1910c$exports.classList('sanddance-sidebar', 'calculator', props.pinned && 'pinned', props.closed && 'closed')
@@ -17614,6 +17632,7 @@ function $851bf9263c6e17c1$var$_Explorer(props) {
                 });
             }
             this.props.onSnapshotsChanged && this.props.onSnapshotsChanged(snapshots);
+            console.log("dalu," + Date.now() + ",Snapshot,Create:" + selectedSnapshotIndex);
         }
         scrollSnapshotIntoView(selectedSnapshotIndex1) {
             clearTimeout(this.scrollSnapshotTimer);
@@ -17979,6 +17998,7 @@ function $851bf9263c6e17c1$var$_Explorer(props) {
                                 let { selectedSnapshotIndex: selectedSnapshotIndex  } = this.state;
                                 if (i === selectedSnapshotIndex) selectedSnapshotIndex = -1;
                                 else if (selectedSnapshotIndex > i) selectedSnapshotIndex--;
+                                console.log("dalu," + Date.now() + ",Snapshot,Delete:" + selectedSnapshotIndex);
                                 this.setState({
                                     snapshots: snapshots,
                                     selectedSnapshotIndex: selectedSnapshotIndex
@@ -17986,6 +18006,7 @@ function $851bf9263c6e17c1$var$_Explorer(props) {
                                 this.props.onSnapshotsChanged && this.props.onSnapshotsChanged(snapshots);
                             },
                             onSnapshotClick: (snapshot, selectedSnapshotIndex)=>{
+                                console.log("dalu," + Date.now() + ",Snapshot,Select:" + selectedSnapshotIndex);
                                 this.setState({
                                     selectedSnapshotIndex: selectedSnapshotIndex
                                 });

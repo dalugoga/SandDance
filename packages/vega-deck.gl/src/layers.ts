@@ -90,7 +90,7 @@ function newCubeLayer(presenter: Presenter, config: PresenterConfig, cubeData: C
                     last_index = o.index;
                 }
                 else {
-                    console.log("dalu," + Date.now() + ",DetailsOnDemand,Started: " + o.index)
+                    console.log("dalu," + Date.now() + ",DetailsOnDemand,Started:" + o.index)
                     last_index = o.index;
                 }
                 

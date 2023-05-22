@@ -1426,7 +1426,7 @@ void main(void) {
                         last_index = o.index;
                     }
                     else {
-                        console.log("dalu," + Date.now() + ",DetailsOnDemand,Started: " + o.index);
+                        console.log("dalu," + Date.now() + ",DetailsOnDemand,Started:" + o.index);
                         last_index = o.index;
                     }
                 if (o.index === -1) {

@@ -358,7 +358,7 @@ export class SandDanceApp extends React.Component<Props, State> {
                             getPicker={() => this.dataSourcePicker}
                             {...dataSourceProps}
                         />
-                    )}/*
+                    )}
                     topBarButtonProps={[
                         {
                             key: 'theme',
@@ -373,7 +373,7 @@ export class SandDanceApp extends React.Component<Props, State> {
                                 this.changeColorScheme(darkTheme);
                             }
                         }
-                    ]}*/
+                    ]}
                     viewerOptions={this.viewerOptions}
                     compactUI={this.state.compactUI}
                     additionalSettings={[

@@ -43,12 +43,12 @@ export function Sidebar(props: Props) {
             sideTabId: SideTabId.Search,
             iconName: 'Search',
             title: strings.labelSearch
-        },
+        },*/
         {
             sideTabId: SideTabId.Snapshots,
             iconName: 'Camera',
             title: strings.labelSnapshots
-        },
+        }/*,
         {
             sideTabId: SideTabId.History,
             iconName: 'History',

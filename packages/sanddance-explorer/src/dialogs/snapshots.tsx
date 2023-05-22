@@ -115,7 +115,7 @@ function _Snapshots(props: Props) {
                                             iconName: 'Edit'
                                         }
                                     }
-                                );
+                                );/*
                                 if (this.props.snapshots.length > 1) {
                                     actions.push(
                                         {
@@ -137,7 +137,7 @@ function _Snapshots(props: Props) {
                                             }
                                         }
                                     );
-                                }
+                                }*/
                                 actions.push(
                                     {
                                         iconButtonProps: {

@@ -17,7 +17,7 @@ function RemoveElements(timeout){
     }, timeout); 
 }
 
-RemoveElements(1000)
+RemoveElements(2000)
 
 var filtered = document.querySelector("#app > section > div > div.sanddance-main.pinned > div.sanddance-sidebar.calculator.pinned > div > div.sanddance-datascope.extended > div > div.datascope-buttons > button:nth-child(2) > span > span > div > div")
 var selected = document.querySelector("#app > section > div > div.sanddance-main.pinned > div.sanddance-sidebar.calculator.pinned > div > div.sanddance-datascope.extended > div > div.datascope-buttons > button:nth-child(3) > span > span > div > div")
@@ -76,3 +76,89 @@ setTimeout(function() {
 
 var chart_button = document.querySelector("#app > section > div > div.sanddance-main.pinned > div.sanddance-sidebar.calculator.pinned > div > div.vbuttons > div.sidebar-dialogs > div.vbutton.selected > button")
 chart_button.setAttribute("onclick","RemoveElements(0)");
+
+document.body.setAttribute("oncontextmenu", "return false")
+
+
+
+
+var el_topbar = document.querySelector("#app > section > div > div.sanddance-explorer-topbar > div.sanddance-explorer-commandbar > div > div > div > div > div.ms-OverflowSet.ms-CommandBar-primaryCommand.primarySet-44");
+        
+let lbl = document.createElement("label");
+lbl.style.backgroundColor = "white";
+lbl.style.display = "flex";
+lbl.style.alignItems = "center";
+lbl.style.padding = "0px 10px 0px 20px"
+let txt = document.createElement("input");
+let btn1 = document.createElement("button");
+let btn2 = document.createElement("button");
+let btn3 = document.createElement("button");
+let btn4 = document.createElement("button");
+let btn5 = document.createElement("button");
+
+lbl.innerHTML = "Id:";
+btn1.innerHTML = "Save Task 1";
+btn2.innerHTML = "Save Task 2";
+btn3.innerHTML = "Save Task 3";
+btn4.innerHTML = "Save Task 4";
+btn5.innerHTML = "Save Task 5";
+
+
+
+el_topbar.appendChild(lbl);
+el_topbar.appendChild(txt);
+el_topbar.appendChild(btn1);
+el_topbar.appendChild(btn2);
+el_topbar.appendChild(btn3);
+el_topbar.appendChild(btn4);
+el_topbar.appendChild(btn5);
+
+
+var oldLog = console.log;
+var messages = [];
+
+console.log = function(msg) {
+    messages.push(msg);
+    oldLog.apply(null, arguments);
+}
+
+function saveToFile(data, filename){
+
+    if(!data) {
+        console.error('Console.save: No data')
+        return;
+    }
+
+    if(!filename) filename = 'console.json'
+
+    if(typeof data === "object"){
+        data = JSON.stringify(data, undefined, 4)
+    }
+
+    var blob = new Blob([data], {type: 'text/json'}),
+        e    = document.createEvent('MouseEvents'),
+        a    = document.createElement('a')
+
+    a.download = filename
+    a.href = window.URL.createObjectURL(blob)
+    a.dataset.downloadurl =  ['text/json', a.download, a.href].join(':')
+    e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+    a.dispatchEvent(e)
+ }
+
+function savelog(n){
+    //console.log(messages)
+    var text_log = "";
+    messages.forEach(function(element) {
+        if(element.includes("dalu")) 
+            text_log = text_log + element + "\n";
+    });
+    saveToFile(text_log, txt.value + "-" + n + ".log")
+    messages = [];
+}
+
+btn1.setAttribute("onClick", "savelog(1)");
+btn2.setAttribute("onClick", "savelog(2)");
+btn3.setAttribute("onClick", "savelog(3)");
+btn4.setAttribute("onClick", "savelog(4)");
+btn5.setAttribute("onClick", "savelog(5)");

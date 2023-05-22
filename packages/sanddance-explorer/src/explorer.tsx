@@ -966,6 +966,7 @@ function _Explorer(props: Props) {
                 this.setState({ sideTabId: SideTabId.Snapshots, snapshots, selectedSnapshotIndex, note });
             }
             this.props.onSnapshotsChanged && this.props.onSnapshotsChanged(snapshots);
+            console.log("dalu," + Date.now() + ",Snapshot,Create:" + selectedSnapshotIndex)
         }
 
         public scrollSnapshotIntoView(selectedSnapshotIndex: number) {
@@ -1328,6 +1329,7 @@ function _Explorer(props: Props) {
                                                 }}
                                                 onWriteSnapshot={(s, i) => this.writeSnapshot(s, i)}
                                                 onRemoveSnapshot={i => {
+                                                    
                                                     const snapshots = [...this.state.snapshots];
                                                     snapshots.splice(i, 1);
                                                     let { selectedSnapshotIndex } = this.state;
@@ -1336,10 +1338,12 @@ function _Explorer(props: Props) {
                                                     } else if (selectedSnapshotIndex > i) {
                                                         selectedSnapshotIndex--;
                                                     }
+                                                    console.log("dalu," + Date.now() + ",Snapshot,Delete:" + selectedSnapshotIndex)
                                                     this.setState({ snapshots, selectedSnapshotIndex });
                                                     this.props.onSnapshotsChanged && this.props.onSnapshotsChanged(snapshots);
                                                 }}
                                                 onSnapshotClick={(snapshot, selectedSnapshotIndex) => {
+                                                    console.log("dalu," + Date.now() + ",Snapshot,Select:" + selectedSnapshotIndex)
                                                     this.setState({ selectedSnapshotIndex });
                                                     this.calculate(() => {
                                                         this.handleReviveSnapshot(snapshot, selectedSnapshotIndex);
